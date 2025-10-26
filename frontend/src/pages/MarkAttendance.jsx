@@ -135,14 +135,10 @@ export default function MarkAttendance() {
               className={`bg-white border border-gray-100 rounded-2xl shadow-lg
           transform ${!isMarked ? "hover:scale-105" : ""}
           transition-all duration-300 p-6
-          ${
-            isMarked
-              ? "opacity-90 cursor-default pointer-events-none"
-              : "cursor-pointer"
-          }
+          
           flex flex-col justify-between min-h-[320px]`}
               onClick={() => {
-                if (!isMarked) openCourseAttendance(course);
+                 openCourseAttendance(course);
               }}
             >
               {/* Header */}
