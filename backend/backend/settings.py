@@ -30,8 +30,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'student-managment-system-j3al.onrender.com',
-    "student-managment-system-beta.vercel.app"
+    'student-managment-system-j3al.onrender.com'
 ]
 
 
@@ -74,6 +73,8 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
     "https://student-managment-system-beta.vercel.app",
+    "https://student-managment-system-git-main-shrut-s-projects.vercel.app",
+    "https://student-managment-system-jegb07bxj-shrut-s-projects.vercel.app"
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
