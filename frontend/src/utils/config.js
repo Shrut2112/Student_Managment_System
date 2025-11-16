@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "https://student-managment-system-beta.vercel.app/";
+const BASE_URL = "https://student-managment-system-j3al.onrender.com";
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,

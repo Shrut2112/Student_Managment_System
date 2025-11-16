@@ -16,7 +16,7 @@ export default function LoginPage() {
     
     try{
 
-      const response = await axios.post('https://student-managment-system-beta.vercel.app/login', formData);
+      const response = await axios.post('https://student-managment-system-j3al.onrender.com/login', formData);
       console.log("Server Response:", response.data);
 
       localStorage.setItem('access_token',response.data.access);
