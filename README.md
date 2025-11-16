@@ -1,6 +1,18 @@
 # 📚 Student Management System — Role-Based, Secure, Full-Stack Platform
 
-A production-grade Student Management System built with Django (REST API) and React featuring multi-role authentication, complex relational data models, attendance tracking, and department-wise course management. Designed with a strong backend architecture and clean API layers to demonstrate robust server-side engineering skills.
+A production-grade Student Management System engineered with Django REST Framework and React, featuring role-based authentication, relational database design, attendance tracking, and department-wise course orchestration.
+This project highlights strong backend architecture, clean REST principles, and real deployment environments suitable for professional-level systems.
+
+## 🔗 Live Demo
+
+- 🌐 **Frontend (Vercel):** 
+    
+    [![Frontend](https://img.shields.io/badge/Live-Frontend-brightgreen)](https://student-managment-system-beta.vercel.app/)
+- 🛠 **Backend API (Render):**
+
+    [![Backend](https://img.shields.io/badge/Live-Backend-blue)](https://student-managment-system-j3al.onrender.com)
+- 🗄 **PostgreSQL Database:** Hosted on Render
+
 
 ## 🚀 Key Features
 
@@ -53,58 +65,58 @@ Ensure data consistency across complex multi-table relationships
 ## 🏗️ System Architecture
 ### 🖥 Backend — Django REST Framework
 
-- Developed using Django + DRF
+- Built using Django + DRF
 
-- Multi-table relational schema using SQLite (easily swappable to PostgreSQL)
+- Fully relational schema using PostgreSQL (production-ready)
 
-- Clear separation of concerns:
+- Deployed backend + database on Render
+
+- Clean modular app structure:
+
     - students
     - courses
-    - enrolled
+    - enrollment
     - attendance
     - department
     - instructor
-    - auth
+    - authentication
     - logs
 
-- Uses rest_framework_simplejwt for secure token issuing & refreshing
+- JWT authentication with secure refresh flow (SimpleJWT)
+
+- Logging middleware for system-wide audit trails
 
 - Designed for horizontal scalability and future migration to distributed systems
 
 ---
 ### 🎨 Frontend — React + TailwindCSS
+Features include:
 
-- TailwindCSS for a clean, responsive UI
+- Responsive UI with TailwindCSS
 
-- Protected routes using React Router
+- Protected routes via React Router
 
-- Interceptor-based token refresh (Axios)
+- Token refresh using Axios interceptors
 
-- Role-specific dashboards automatically rendered
+- Role-aware dashboard rendering
 
-- Real-time views for attendance, course enrollment, and instructor tools
+- Real-time views for students, instructors, and admins
 
 ---
-### 📊 Database Design & Complexity
+### 🗄️ Database — PostgreSQL
 
-The project showcases strong backend & database engineering:
+- Hosted on Render PostgreSQL
 
-- Complex multi-table relationships
+- Strong relational design:
 
-- Many-to-Many relations via enrollment
+    - Many-to-many via Enrollment
+    - Department-level segregation
+    - Instructor ↔ Course mapping
+    - Attendance logs linked across multiple models
 
-- Instructor-to-course mapping
+- Normalized schema optimized for performance
 
-- Department-level segregation
-
-- Course ↔ Student ↔ Instructor relational graph
-
-- Attendance logs linked across multiple entities
-
-- Admin activity logged and queryable
-
-This demonstrates the ability to build normalized, scalable relational schemas.
-
+- dumpdata_filtered.json included for easy environment bootstrapping (cleaned and structured for recruiters)
 ---
 ### 🔒 Authentication & Security
 
@@ -132,13 +144,12 @@ Implemented with industry-grade practices:
 
     SimpleJWT (Access/Refresh token auth)
 
-    SQLite (development), future-ready for PostgreSQL
-
+    PostgreSQL (production)
 ### **Frontend**
 
     React
 
-    Axios (token refresh interceptor)
+    Axios 
 
     React Router
 
@@ -148,10 +159,18 @@ Implemented with industry-grade practices:
 
     Role-Based Access Control (RBAC)
 
-    Multi-table ORM relations
+    Advanced ORM relationships
 
-    Logging middleware
+    Central logging & auditing
 
+    Clean architectural separation
+
+## 🌐 Deployment
+
+- Backend + PostgreSQL Database → Render
+- Frontend → Vercel
+
+All environment variables, CORS rules, and production build optimizations are properly configured.
 
 ## **📸 Screenshots**
 ### **Sudent Panel-**
@@ -230,6 +249,7 @@ Backend
 cd backend
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py loaddata datadump_filtered.json
 python manage.py runserver
 ````
 Frontend
@@ -240,28 +260,45 @@ npm run dev
 ````
 ## 🎯 Why This Project Matters (For Recruiters)
 
-This system demonstrates:
+This project demonstrates my strong capability in backend system design:
 
-- Ability to design secure, scalable backend systems
+### ✔ Advanced Backend Engineering
 
-- Strong understanding of authentication, role-based access, and token lifecycles
+- Secure token-based authentication
 
-- Implementation of complex relational data models
+- RBAC implementation
 
-- Experience building REST APIs used by real frontend clients
+- Multi-table relational models
 
-- Capability to work across full stack (React + Django)
+- Transaction-safe attendance & enrollment logic
 
-- Clean architectural decisions and modularity
+- Logging middleware & auditing
 
-- Perfect example of backend engineering with full-stack integration.
+### ✔ Production Deployment Experience
+
+- PostgreSQL configuration
+
+- Render backend + DB deployment
+
+- Vercel static deployment
+
+- CORS, environment variables, build pipelines
+
+### ✔ Full-Stack Integration
+
+- REST API consumed by a real production frontend
+
+- Token lifecycle management with interceptors
+
+- Role-based dashboard rendering
+
+This is a real-world, fully-functional system that reflects how I build scalable backend architectures integrated with modern frontend frameworks.
 
 ## 📬 Contact
 
-If you're a recruiter or engineer reviewing this—I'd love to talk!
-Feel free to reach out for backend or full-stack opportunities.
+If you're a recruiter or engineer reviewing this project — I’d love to connect!
+Open to Backend or Full-Stack opportunities.
 
 **Email - jainshrutd211204@gmail.com**
 
-----
 ----
