@@ -3,6 +3,7 @@ import axios from "axios";
 import StudentForm from "../componenets/StudentForm";
 import UserForm from "../componenets/UserForm";
 import InstructorForm from "../componenets/InstructorForm";
+import axiosInstance from "../utils/config";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({});
@@ -16,9 +17,9 @@ export default function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://127.0.0.1:8000/register"
+      const url = "register"
 
-      const response = await axios.post(url, formData);
+      const response = await axiosInstance.post(url, formData);
       console.log("Server Response:", response.data);
 
       // localStorage.setItem("token", response.data.token);

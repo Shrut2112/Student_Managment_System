@@ -1,0 +1,1004 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2025-10-24T17:20:28.099Z",
+      "user": 41,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "admin",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2025-10-24T18:46:14.744Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-25)",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2025-10-24T19:58:12.759Z",
+      "user": 41,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "Enrolled object (7)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2025-10-24T20:30:18.603Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "1",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-25)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2025-10-24T21:33:14.646Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "4",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-24)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2025-10-24T21:33:30.383Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "5",
+      "object_repr": "bt23cse035 - CSL102 (2025-10-24)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2025-10-24T22:07:27.275Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "6",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-23)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2025-10-24T22:07:50.514Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "7",
+      "object_repr": "bt23cse035 - CSL102 (2025-10-23)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2025-10-25T10:24:18.390Z",
+      "user": 41,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "Enrolled object (8)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2025-10-25T10:24:41.692Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "bt23cse027 - CSL103 (2025-10-25)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2025-10-25T17:54:34.240Z",
+      "user": 41,
+      "content_type": 11,
+      "object_id": "7",
+      "object_repr": "Teaches object (7)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2025-10-25T17:54:53.461Z",
+      "user": 41,
+      "content_type": 11,
+      "object_id": "7",
+      "object_repr": "Teaches object (7)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2025-10-25T18:11:18.588Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "8",
+      "object_repr": "bt23cse027 - CSL103 (2025-10-25)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2025-10-25T18:11:24.632Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "3",
+      "object_repr": "bt23cse035 - CSL102 (2025-10-25)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2025-10-25T18:11:29.559Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "2",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-25)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2025-10-25T18:50:52.271Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "12",
+      "object_repr": "bt23cse035 - CSL102 (2025-10-26)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2025-10-25T18:50:56.880Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "11",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-26)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2025-10-25T20:41:55.675Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "15",
+      "object_repr": "bt23cse027 - CSL103 (2025-10-25)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2025-10-26T10:29:53.135Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "14",
+      "object_repr": "bt23cse035 - CSL102 (2025-10-26)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2025-10-26T10:29:58.984Z",
+      "user": 41,
+      "content_type": 15,
+      "object_id": "13",
+      "object_repr": "bt23cse027 - CSL102 (2025-10-26)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2025-10-26T10:43:57.648Z",
+      "user": 41,
+      "content_type": 7,
+      "object_id": "CSL301",
+      "object_repr": "Course object (CSL301)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2025-10-26T10:46:08Z",
+      "user": 41,
+      "content_type": 7,
+      "object_id": "CSL301",
+      "object_repr": "Course object (CSL301)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2025-10-26T11:09:12.678Z",
+      "user": 41,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "Enrolled object (9)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2025-10-26T11:09:46.491Z",
+      "user": 41,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "Enrolled object (10)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2025-11-15T10:58:12.775Z",
+      "user": 43,
+      "content_type": 13,
+      "object_id": "21",
+      "object_repr": "bt23cse035 - CSL102 (2025-11-15)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2025-11-15T10:58:16.647Z",
+      "user": 43,
+      "content_type": 13,
+      "object_id": "20",
+      "object_repr": "bt23cse027 - CSL102 (2025-11-15)",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "cpje5624gsmpvrz8lxyd1cwt88e3keqg",
+    "fields": {
+      "session_data": ".eJxVjM0OwiAQhN-FsyGUn23x6N1nILssSNXQpLQn47srSQ-azGm-b-YlAu5bCXtLa5hZnIU14vRbEsZHqp3wHettkXGp2zqT7Io8aJPXhdPzcrh_BwVb6WsATTSoPObkIKI1nhU5cqwQtWL2BvTgM4xaJQ9sJ-2-8WbyBOCceH8ADJo3VQ:1vIsID:tOKcw3lxe9qzNbdROHEhvXwdv6hZPyP6KVhu7AVhHcE",
+      "expire_date": "2025-11-25T17:36:33.296Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "i8jiedznvazxbngw44rdyrstb7fbnq0f",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGln2rj8xJT1niDbeNQkgW8qnQtwdIqWA9s3Me6metnXst0XmfmJ1Vs6q0-84UH5I3Qnfqd6azq2u8zToXdEHXfS1sTwvh_t3MNIyfmvfJR-xlGSLgAQWCimG5F2wJhJa6AAMIQi5jAnFApqc0bKDwTB79f4A6Lk3PQ:1vCLSc:KwHrQc_ElRTuYCtfJIv9RgOAjydbe6IJGAE0v4W8cts",
+      "expire_date": "2025-11-07T17:20:18.733Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "pw44k44ntycwkuorqi74ylx7bq6hyid4",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQRO_iGlnrxV9Kes5gre0NDiBHipMKcXcSKQU0U8x7M28RaV1qXDvPcSziIlCL02-ZKD-57aQ8qN0nmae2zGOSuyIP2uVtKvy6Hu7fQaVet3VQ6NEUPRAYzYacBe19QYsAPmxJ1mOAAD6fkdOgwHI2zC47qwyy-HwBy0w2ug:1v5NA0:uOIWmZ-5r1yhFFigwvbrNDRlXnKJJZOgUHd1DMBmiY0",
+      "expire_date": "2025-10-19T11:44:16.707Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ttiv30mgvc9xi4bzsfe7betcdr54ry20",
+    "fields": {
+      "session_data": ".eJxVjDsOgzAQRO_iOrL8WXtxyvScwTLeJSaJjIShinL3gESRTDnvzbxFTNta4tZ4iROJq9Di8tsNKT-5HoAeqd5nmee6LtMgD0WetMl-Jn7dTvfvoKRW9jUkG0JnleMOIOzRAY3SWnv2SORRQQZHFsiOgR2q0VhEY71nZxCM-HwBlVY1uA:1v4Kd5:T2ZtNRJq4HsmsSx67rVHFOXWTtSabg6C2XehCtyKf44",
+      "expire_date": "2025-10-16T14:49:59.682Z"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 29,
+    "fields": {
+      "studentId": "bt23cse035",
+      "gender": "M",
+      "dob": "2005-01-05",
+      "phno": "7219097690",
+      "dept": "CSE"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 38,
+    "fields": {
+      "studentId": "bt23eci003",
+      "gender": "M",
+      "dob": "2005-09-08",
+      "phno": "1234567890",
+      "dept": "ECE"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 40,
+    "fields": {
+      "studentId": "bt23cse027",
+      "gender": "M",
+      "dob": "2004-12-21",
+      "phno": "7020162652",
+      "dept": "CSE"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 42,
+    "fields": {
+      "studentId": "bt23cse010",
+      "gender": "M",
+      "dob": "2005-11-20",
+      "phno": "6969696969",
+      "dept": "CSE"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": "CSL102",
+    "fields": {
+      "CourseName": "DSA",
+      "CourseDesc": "Data Structure and algorithm.",
+      "CourseCredits": 4,
+      "Course_Dept_ID": "CSE"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": "CSL103",
+    "fields": {
+      "CourseName": "OOPS",
+      "CourseDesc": "Object Oriented Programming",
+      "CourseCredits": 4,
+      "Course_Dept_ID": "CSE"
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": "CSL302",
+    "fields": {
+      "CourseName": "CC",
+      "CourseDesc": "Cloud Computing",
+      "CourseCredits": 4,
+      "Course_Dept_ID": "CSE"
+    }
+  },
+  {
+    "model": "enrolled.enrolled",
+    "pk": 6,
+    "fields": {
+      "student_id": 40,
+      "course_code": "CSL102",
+      "enrolled_on": "2025-10-21T22:56:08.066Z"
+    }
+  },
+  {
+    "model": "enrolled.enrolled",
+    "pk": 7,
+    "fields": {
+      "student_id": 29,
+      "course_code": "CSL102",
+      "enrolled_on": "2025-10-25T01:28:01Z"
+    }
+  },
+  {
+    "model": "enrolled.enrolled",
+    "pk": 8,
+    "fields": {
+      "student_id": 40,
+      "course_code": "CSL103",
+      "enrolled_on": "2025-10-25T15:54:07Z"
+    }
+  },
+  {
+    "model": "enrolled.enrolled",
+    "pk": 11,
+    "fields": {
+      "student_id": 40,
+      "course_code": "CSL302",
+      "enrolled_on": "2025-10-26T16:41:38.545Z"
+    }
+  },
+  {
+    "model": "enrolled.enrolled",
+    "pk": 12,
+    "fields": {
+      "student_id": 42,
+      "course_code": "CSL103",
+      "enrolled_on": "2025-11-03T17:58:48.550Z"
+    }
+  },
+  {
+    "model": "department.department",
+    "pk": "BS",
+    "fields": {
+      "dept_name": "Basic Science",
+      "hod": null
+    }
+  },
+  {
+    "model": "department.department",
+    "pk": "CSE",
+    "fields": {
+      "dept_name": "Computer Science and Engineering",
+      "hod": 17
+    }
+  },
+  {
+    "model": "department.department",
+    "pk": "ECE",
+    "fields": {
+      "dept_name": "Electronics and Communication Engineering",
+      "hod": 36
+    }
+  },
+  {
+    "model": "Instructor.instructor",
+    "pk": 17,
+    "fields": {
+      "InsId": "cse101",
+      "phno": "7020162654",
+      "dept": "CSE"
+    }
+  },
+  {
+    "model": "Instructor.instructor",
+    "pk": 36,
+    "fields": {
+      "InsId": "rahu@772",
+      "phno": "1234567890",
+      "dept": "CSE"
+    }
+  },
+  {
+    "model": "teaches.teaches",
+    "pk": 2,
+    "fields": {
+      "instructor": 17,
+      "course": "CSL102",
+      "sem": 2,
+      "year": 2025
+    }
+  },
+  {
+    "model": "teaches.teaches",
+    "pk": 5,
+    "fields": {
+      "instructor": 36,
+      "course": "CSL102",
+      "sem": 5,
+      "year": 2025
+    }
+  },
+  {
+    "model": "teaches.teaches",
+    "pk": 8,
+    "fields": {
+      "instructor": 36,
+      "course": "CSL302",
+      "sem": 5,
+      "year": 2025
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$RQ5LgQXcD1NRoU4mVlfCMM$81aY1tuuYp/e+XM+CXtudoo/NZ0ERMzM1NOm4uWgYvk=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "alice4",
+      "first_name": "alice",
+      "last_name": "watson",
+      "email": "alice@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-03T09:02:36.225Z",
+      "role": "instructor",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 29,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$nm2GhFfihqgS2hUUcWXTZR$jELvQKuyDwAuA8vyMkerU4mC8b46Q/BZZPX0Sln0bOE=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Rish@5000",
+      "first_name": "Rishabh",
+      "last_name": "Jain",
+      "email": "bt23cse035@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-07T12:02:14.206Z",
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 36,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$edNPValzXpHWX9jIshnf6H$Etz8YEVnajiMOymTT9NLVd02cmPIrLQ9gbTfjgLM+8M=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "rahul@7",
+      "first_name": "Rahul",
+      "last_name": "Semwal",
+      "email": "rahul_s@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-07T18:30:59.801Z",
+      "role": "instructor",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 38,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$vGdKPc0ZBXDizcY0xW8wWG$ikazJJA/sf9SiOQ5R8KkyAEXSpnAtEM19PfyTv1u4Z4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Ameya@003",
+      "first_name": "Ameya",
+      "last_name": "Balange",
+      "email": "bt23eci003@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-19T12:08:28.382Z",
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 39,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$W2INnhF1lxqaDDp8av7acP$2WKq/mVMvJ4l2aSxVkEXFC25977VlPsmu+eEZ6TGhao=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "shis@00",
+      "first_name": "Shishu",
+      "last_name": "Pal",
+      "email": "shis@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-20T17:15:35.018Z",
+      "role": "admin",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 40,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$pUs98gkP2IsOSk2iF0RoRz$T/N/s1BWVzE5LMoQvoE+H97LQKiqPtyDLQZ+dp1asww=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "shru@04",
+      "first_name": "Shrut",
+      "last_name": "Jain",
+      "email": "bt23cse027@iiitn.ac.in",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-10-21T15:14:04.257Z",
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 41,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$geuNTgYvjRk4zdExQZMgJl$J/c/ZfOAiAb09Z/rnDg5/X2jarY5HnmgTvj4BGni02A=",
+      "last_login": "2025-10-24T17:20:18.725Z",
+      "is_superuser": true,
+      "username": "adminn",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-10-24T17:19:43.631Z",
+      "role": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 42,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1XI6M3ndmh3nptiUweWHWO$GoNwdPiZhDa4krGrguTezAYL5z8wDm/ub4zDss0OyQk=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "kus@69",
+      "first_name": "Kushagra",
+      "last_name": "Singh",
+      "email": "bt23cse010@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-11-03T12:28:17.786Z",
+      "role": "student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "user.users",
+    "pk": 43,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$yM3QnblawoHfAmXEh3fG5Y$Prdv5ONGpUzHDnGni/EGyEXlwGnhjZUM6ZADVVNeWOA=",
+      "last_login": "2025-11-11T17:36:33.289Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-11-11T17:36:12.857Z",
+      "role": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 4,
+    "fields": {
+      "student": 40,
+      "course": "CSL102",
+      "date": "2025-10-24",
+      "status": false,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 5,
+    "fields": {
+      "student": 29,
+      "course": "CSL102",
+      "date": "2025-10-24",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 6,
+    "fields": {
+      "student": 40,
+      "course": "CSL102",
+      "date": "2025-10-23",
+      "status": false,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 7,
+    "fields": {
+      "student": 29,
+      "course": "CSL102",
+      "date": "2025-10-23",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 9,
+    "fields": {
+      "student": 40,
+      "course": "CSL102",
+      "date": "2025-10-25",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 10,
+    "fields": {
+      "student": 29,
+      "course": "CSL102",
+      "date": "2025-10-25",
+      "status": false,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 15,
+    "fields": {
+      "student": 40,
+      "course": "CSL103",
+      "date": "2025-10-25",
+      "status": false,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 16,
+    "fields": {
+      "student": 40,
+      "course": "CSL102",
+      "date": "2025-10-26",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 17,
+    "fields": {
+      "student": 29,
+      "course": "CSL102",
+      "date": "2025-10-26",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 18,
+    "fields": {
+      "student": 40,
+      "course": "CSL102",
+      "date": "2025-11-03",
+      "status": true,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "attendance.attendance",
+    "pk": 19,
+    "fields": {
+      "student": 29,
+      "course": "CSL102",
+      "date": "2025-11-03",
+      "status": false,
+      "marked_by": 17
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 1,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for 2025-10-26 is marked for CSL102",
+      "timestamp": "2025-10-26T10:30:11.365Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 2,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for 2025-10-26 is marked for CSL102",
+      "timestamp": "2025-10-26T10:30:11.384Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 3,
+    "fields": {
+      "user": 39,
+      "action": "Course 'CC' (CSL302) was created by shis@00.",
+      "timestamp": "2025-10-26T10:49:44.467Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 4,
+    "fields": {
+      "user": 39,
+      "action": "Course 'DBMS' (CSL301) was deleted by shis@00.",
+      "timestamp": "2025-10-26T10:50:01.633Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 5,
+    "fields": {
+      "user": 39,
+      "action": "Department 'BS' (Basic Science) was created by shis@00.",
+      "timestamp": "2025-10-26T10:55:36.892Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 6,
+    "fields": {
+      "user": 40,
+      "action": "Student - bt23cse027 enrolled in course - CSL302",
+      "timestamp": "2025-10-26T11:11:38.560Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 7,
+    "fields": {
+      "user": 39,
+      "action": "Course - CSL302 allotted to Instructor - rahu@772 by shis@00",
+      "timestamp": "2025-10-26T11:16:07.817Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 8,
+    "fields": {
+      "user": 39,
+      "action": "Department 'BS' (Basic Science) was deleted by shis@00.",
+      "timestamp": "2025-10-26T11:52:16.176Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 9,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for CSL102 is Marked by cse101 on 2025-11-03",
+      "timestamp": "2025-11-03T12:23:21.331Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 10,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for CSL102 is Marked by cse101 on 2025-11-03",
+      "timestamp": "2025-11-03T12:23:21.344Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 11,
+    "fields": {
+      "user": 42,
+      "action": "Student - bt23cse010 enrolled in course - CSL103",
+      "timestamp": "2025-11-03T12:28:48.563Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 12,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for CSL102 is Marked by cse101 on 2025-11-15",
+      "timestamp": "2025-11-15T07:53:11.955Z"
+    }
+  },
+  {
+    "model": "logs.logdetails",
+    "pk": 13,
+    "fields": {
+      "user": 17,
+      "action": "Attendance for CSL102 is Marked by cse101 on 2025-11-15",
+      "timestamp": "2025-11-15T07:53:11.972Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "36b39ad038f9d8165815ef28f75c8a6cb186bdf2",
+    "fields": {
+      "user": 42,
+      "created": "2025-11-03T12:28:28.549Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "3ee0fdbfc670d16577be1d0f4a3a1374115ab52e",
+    "fields": {
+      "user": 40,
+      "created": "2025-10-21T15:14:33.728Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "48a0d321711ea1cf8cc834baf986a26bce6302c7",
+    "fields": {
+      "user": 17,
+      "created": "2025-10-03T09:02:46.393Z"
+    }
+  },
+  {
+    "model": "authtoken.token",
+    "pk": "57b2ffbd32b34bd0f0c2698d0425d486428c6232",
+    "fields": {
+      "user": 39,
+      "created": "2025-10-20T17:15:44.249Z"
+    }
+  }
+]

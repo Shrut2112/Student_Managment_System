@@ -4,6 +4,7 @@ import UserForm from "../componenets/UserForm";
 import InstructorForm from '../componenets/InstructorForm'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../utils/config";
 export default function ManageInstructor() {
   const [searchTerm, setSearchTerm] = useState("");
   const [addInstructor, setaddInstructor] = useState(false);
@@ -19,9 +20,9 @@ export default function ManageInstructor() {
   }, [])
   
   const fetchInstructors = async ()=>{
-    const url = 'http://localhost:8000/instructor/api/'
+    const url = 'instructor/api/'
     try{
-      const response = await axios.get(url)
+      const response = await axiosInstance.get(url)
     setInstructor(response.data)
     console.log(response.data)
     }
@@ -33,9 +34,9 @@ export default function ManageInstructor() {
 
   const deleteInstructor = async (id)=>{
     try{
-      const url = `http://localhost:8000/instructor/api/${id}/`
+      const url = `instructor/api/${id}/`
       console.log("url"+ url)
-      const response = await axios.delete(url)
+      const response = await axiosInstance.delete(url)
       console.log("Deleted response: ",response.data)
       setInstructor(prevstudent => prevstudent.filter(instructor => instructor.InsId !== id))
       alert("Instructor Deleted Successfully")
@@ -53,9 +54,9 @@ export default function ManageInstructor() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://127.0.0.1:8000/register"
+      const url = "register"
 
-      const response = await axios.post(url, formData);
+      const response = await axiosInstance.post(url, formData);
       console.log("Server Response:", response.data);
 
       // localStorage.setItem("token", response.data.token);
@@ -101,8 +102,8 @@ export default function ManageInstructor() {
   const handleSubmitEdit = async (e)=>{
     e.preventDefault()
     try{
-      const url = `http://localhost:8000/instructor/api/${EditM.InsId}/`
-      const response = await axios.patch(url,formData)
+      const url = `instructor/api/${EditM.InsId}/`
+      const response = await axiosInstance.patch(url,formData)
       setEditM(null)
       
       fetchInstructors()

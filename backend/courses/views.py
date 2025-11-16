@@ -5,10 +5,11 @@ from rest_framework.response import Response
 from .serializer import CourseSerializer
 from rest_framework import viewsets
 from logs.models import LogDetails
-from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
+
 class CourseView(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
     queryset = Course.objects.all()
     lookup_field = 'CourseCode'

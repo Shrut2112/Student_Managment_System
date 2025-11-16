@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
+import axiosInstance from "../utils/config";
 
 export default function MyCoursePage() {
   const [courses, setCourses] = useState([]);
@@ -10,11 +11,10 @@ export default function MyCoursePage() {
   const user = JSON.parse(localStorage.getItem("user"));
   const studentId = user?.studentId;
 
-  axios.defaults.headers.common['Authorization'] = `Token ${localStorage.getItem('token')}`
   const fetchCourses = async () => {
     try {
-      const url = `http://127.0.0.1:8000/enrollment/student/${studentId}`;
-      const response = await axios.get(url);
+      const url = `enrollment/student/${studentId}`;
+      const response = await axiosInstance.get(url);
       setCourses(response.data);
       console.log(response.data)
     } catch (err) {
@@ -29,8 +29,8 @@ export default function MyCoursePage() {
   // Enroll Modal
   const openEnrollModal = async () => {
     try {
-      const url = `http://127.0.0.1:8000/courses?dept_id=${user.dept_id}`;
-      const response = await axios.get(url);
+      const url = `courses?dept_id=${user.dept_id}`;
+      const response = await axiosInstance.get(url);
       setAvailableCourses(response.data);
       setShowEnrollModal(true);
     } catch (err) {
@@ -53,8 +53,8 @@ export default function MyCoursePage() {
         studentId,
         CourseCode: selectedCourse.CourseCode || selectedCourse,
       };
-      const response = await axios.post(
-        "http://127.0.0.1:8000/enrollment/enroll",
+      const response = await axiosInstance.post(
+        "enrollment/enroll",
         payload
       );
       alert(response.data.message);

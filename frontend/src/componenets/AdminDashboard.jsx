@@ -22,6 +22,7 @@ import {
   Users,
   UtensilsCrossed,
 } from "lucide-react";
+import axiosInstance from "../utils/config";
 
 export default function AdminDashboardSummary({ user }) {
   const [studentCount, setStudentCount] = useState(0);
@@ -35,19 +36,16 @@ export default function AdminDashboardSummary({ user }) {
   const [departmentCount, setDepartmentCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [logs, setlogs] = useState([]);
-  axios.defaults.headers.common[
-    "Authorization"
-  ] = `Token ${localStorage.getItem("token")}`;
-
+  
   useEffect(() => {
     const fetchCounts = async () => {
       try {
         const [studentsRes, instructorsRes, coursesRes, deptsRes] =
           await Promise.all([
-            axios.get("http://127.0.0.1:8000/students/api/"),
-            axios.get("http://127.0.0.1:8000/instructor/api/"),
-            axios.get("http://127.0.0.1:8000/courses/api/"),
-            axios.get("http://127.0.0.1:8000/department/api/"),
+            axiosInstance.get("students/api/"),
+            axiosInstance.get("instructor/api/"),
+            axiosInstance.get("courses/api/"),
+            axiosInstance.get("department/api/"),
           ]);
 
         setStudentCount(studentsRes.data.length);
@@ -67,8 +65,8 @@ export default function AdminDashboardSummary({ user }) {
 
   const fetchActivities = async () => {
     try {
-      const url = "http://127.0.0.1:8000/activity/logs/";
-      const response = await axios.get(url);
+      const url = "activity/logs/";
+      const response = await axiosInstance.get(url);
       setlogs(response.data);
     } catch (err) {
       console.log(err);
@@ -103,8 +101,8 @@ export default function AdminDashboardSummary({ user }) {
   const fetchAvgAtt = async () => {
     try {
       const attendancePromises = Course.map(async (course) => {
-        const url = `http://127.0.0.1:8000/attendance/course/${course.CourseCode}/`;
-        const res = await axios.get(url);
+        const url = `attendance/course/${course.CourseCode}/`;
+        const res = await axiosInstance.get(url);
 
         return {
           courseCode: course.CourseCode,
@@ -124,8 +122,8 @@ export default function AdminDashboardSummary({ user }) {
     const total = Course.length;
     let marked = 0;
     for (let course of Course) {
-      const res = await axios.get(
-        `http://127.0.0.1:8000/attendance/status/${course.CourseCode}/`
+      const res = await axiosInstance.get(
+        `attendance/status/${course.CourseCode}/`
       );
       if (res.data.attendance_marked === true) {
         marked += 1;
@@ -136,8 +134,8 @@ export default function AdminDashboardSummary({ user }) {
   const fetchAttendance = async () => {
     try {
       const attendancePromises = Student.map(async (student) => {
-        const url = `http://127.0.0.1:8000/attendance/student/${student.studentId}/`;
-        const res = await axios.get(url);
+        const url = `attendance/student/${student.studentId}/`;
+        const res = await axiosInstance.get(url);
         return {
           studentId: student.studentId,
           average_attendance: res.data.average_attendance,

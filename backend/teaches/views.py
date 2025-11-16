@@ -9,15 +9,14 @@ from Instructor.serializer import InstSerializer
 from .serializer import TeachSerializer
 from enrolled.models import Enrolled
 from django.db.models import Count
-from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from backend.permission import IsAdmin,IsInstOrAdmin
 from .serializer import TeachesInstructorSerializer
 from logs.models import LogDetails
 # Create your views here.
 class AllotCourse(APIView):
-
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsAdmin]
 
     def post(self,request):
@@ -55,8 +54,7 @@ class AllotCourse(APIView):
 
 
 class CourseList(APIView):
-
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsInstOrAdmin]
     def get(self,request,inst_id):
 

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import StudentCourseList from "../componenets/StudentCourseList";
+import axiosInstance from "../utils/config";
 
 export default function InstructorMyCourse() {
   const [courses, setCourses] = useState([]);
@@ -10,12 +11,12 @@ export default function InstructorMyCourse() {
   const [isOpen,setisOpen] = useState(false)
   const user = JSON.parse(localStorage.getItem("user"));
   const InsId = user?.InsId;
-  axios.defaults.headers.common['Authorization'] = `Token ${localStorage.getItem('token')}`;
+  
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const url = `http://127.0.0.1:8000/teaches/instructor/${InsId}/courses`;
-        const response = await axios.get(url);
+        const url = `teaches/instructor/${InsId}/courses`;
+        const response = await axiosInstance.get(url);
         setCourses(response.data);
         console.log(response.data);
       } catch (err) {

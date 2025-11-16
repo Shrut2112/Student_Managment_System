@@ -7,10 +7,10 @@ from .serializer import CourseSerializer
 from students.serilizer import StudentSerializer
 from logs.models import LogDetails
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class Enroll(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
     
     def post(self,request):

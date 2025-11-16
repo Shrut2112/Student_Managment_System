@@ -5,13 +5,13 @@ from Instructor.models import Instructor
 from rest_framework.response import Response
 from .serializer import DeptSerializer
 from rest_framework import viewsets
-from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from backend.permission import IsAdmin
 from logs.models import LogDetails
 
 class DepView(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsAdmin]
 
     queryset = Department.objects.all()
@@ -44,7 +44,7 @@ class Dep_info(APIView):
         
 class AssignHod(APIView):
 
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsAdmin]
     
     def post(self,request):

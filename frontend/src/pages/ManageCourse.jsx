@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Trash2, Search, PlusCircle, X, Edit, ConstructionIcon } from "lucide-react";
 import axios from "axios";
+import axiosInstance from "../utils/config";
 
 export default function ManageCourses() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,8 +18,6 @@ export default function ManageCourses() {
   const [instructors, setInstructors] = useState([]);
   const [assignData, setAssignData] = useState({ instructor: "", sem: "", year: "" });
 
-  // Set token once
-  axios.defaults.headers.common['Authorization'] = `Token ${localStorage.getItem('token')}`;
 
   // Fetch data
   useEffect(() => {
@@ -29,7 +28,7 @@ export default function ManageCourses() {
 
   const fetchAllInstructors = async ()=>{
     try{
-      const response = await axios.get("http://localhost:8000/instructor/api/")
+      const response = await axiosInstance.get("instructor/api/")
       setInstructors(response.data)
     }
     catch (err){
@@ -38,7 +37,7 @@ export default function ManageCourses() {
   }
   const fetchInstructor = async(CourseCode) =>{
     try {
-      const response = await axios.get(`http://localhost:8000/teaches/course/${CourseCode}/instructor/`);
+      const response = await axiosInstance.get(`teaches/course/${CourseCode}/instructor/`);
       setInstCo(response.data);
       console.log(response.data);
       setShowInstModal(true);
@@ -49,7 +48,7 @@ export default function ManageCourses() {
 
   const fetchDepartments = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/department/api/");
+      const response = await axiosInstance.get("department/api/");
       setDepartments(response.data);
     } catch (err) {
       alert("Error fetching departments: " + err);
@@ -58,7 +57,7 @@ export default function ManageCourses() {
 
   const fetchCourses = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/courses/api/");
+      const response = await axiosInstance.get("courses/api/");
       setCourses(response.data);
       setFilteredCourses(response.data);
     } catch (err) {
@@ -79,7 +78,7 @@ export default function ManageCourses() {
   // Delete course
   const deleteCourse = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/courses/api/${id}/`);
+      await axiosInstance.delete(`courses/api/${id}/`);
       fetchCourses();
       alert("Course deleted successfully");
     } catch (err) {
@@ -96,7 +95,7 @@ export default function ManageCourses() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/courses/api/", formData);
+      await axiosInstance.post("courses/api/", formData);
       fetchCourses();
       setAddCourse(false);
       setFormData({});
@@ -110,8 +109,8 @@ export default function ManageCourses() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:8000/courses/api/${editCourse.CourseCode}/`;
-      await axios.patch(url, formData);
+      const url = `courses/api/${editCourse.CourseCode}/`;
+      await axiosInstance.patch(url, formData);
       alert("Updated successfully");
       setEditCourse(null);
       setFormData({});
@@ -130,8 +129,8 @@ export default function ManageCourses() {
         "sem": assignData.sem,
         "year": assignData.year,
       }
-      const url = "http://localhost:8000/teaches/allot/"
-      await axios.post(url, payload);
+      const url = "teaches/allot/"
+      await axiosInstance.post(url, payload);
       
       alert("Instructor assigned successfully!");
       setAssignModal(false);

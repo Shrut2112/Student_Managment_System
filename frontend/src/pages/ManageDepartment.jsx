@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Trash2, Search, PlusCircle, X, Edit } from "lucide-react";
 import axios from "axios";
+import axiosInstance from "../utils/config";
 
 export default function ManageDepartment() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,9 +11,7 @@ export default function ManageDepartment() {
   const [Instructor, setInstructor] = useState([])
   const [filteredDepartments, setFilteredDepartments] = useState([]);
   const [formData, setFormData] = useState({});
-  // Set token once
-  axios.defaults.headers.common['Authorization'] = `Token ${localStorage.getItem('token')}`;
-
+ 
   
   useEffect(() => {
     fetchDepartments();
@@ -21,7 +20,7 @@ export default function ManageDepartment() {
 
   const fetchDepartments = async () => {  
     try {
-      const response = await axios.get("http://localhost:8000/department/api/");
+      const response = await axiosInstance.get("department/api/");
       setDepartments(response.data);
       setFilteredDepartments(response.data);
       console.log(response.data)
@@ -32,7 +31,7 @@ export default function ManageDepartment() {
 
   const deleteDepartment = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/department/api/${id}/`);
+      await axiosInstance.delete(`department/api/${id}/`);
       fetchDepartments();
       alert("Department deleted successfully");
     } catch (err) {
@@ -48,7 +47,7 @@ export default function ManageDepartment() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/department/api/", formData);
+      await axiosInstance.post("department/api/", formData);
       fetchDepartments();
       setAddDept(false);
       alert("Department added successfully!");
@@ -59,9 +58,9 @@ export default function ManageDepartment() {
   };
 
   const fetchInstructors = async ()=>{
-    const url = 'http://localhost:8000/instructor/api/'
+    const url = 'instructor/api/'
     try{
-      const response = await axios.get(url)
+      const response = await axiosInstance.get(url)
     setInstructor(response.data)
     console.log(response.data)
     }
@@ -74,8 +73,8 @@ export default function ManageDepartment() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:8000/department/api/${editDept.det_id}/`;
-      await axios.patch(url, formData);
+      const url = `department/api/${editDept.det_id}/`;
+      await axiosInstance.patch(url, formData);
       fetchDepartments();
       setEditDept(null);
       alert("Department updated successfully!");

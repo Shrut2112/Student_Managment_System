@@ -17,7 +17,9 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path,include
-
+from rest_framework_simplejwt.views import (
+    TokenRefreshView,
+)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('students/',include('students.urls')),
@@ -29,4 +31,5 @@ urlpatterns = [
     path('attendance/',include('attendance.urls')),
     path('activity/',include('logs.urls')),
     path('',include('user.urls')),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

@@ -4,6 +4,7 @@ import UserForm from "../componenets/UserForm";
 import StudentForm from "../componenets/StudentForm";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import axiosInstance from "../utils/config";
 export default function ManageStudents() {
   const [searchTerm, setSearchTerm] = useState("");
   const [addStudent, setaddStudent] = useState(false);
@@ -18,9 +19,9 @@ export default function ManageStudents() {
   }, [])
   
   const fetchStudent = async ()=>{
-    const url = 'http://localhost:8000/students/api/'
+    const url = 'students/api/'
     try{
-      const response = await axios.get(url)
+      const response = await axiosInstance.get(url)
     setstudents(response.data)
     console.log(response.data)
     }
@@ -32,9 +33,9 @@ export default function ManageStudents() {
 
   const deleteStudent = async (id)=>{
     try{
-      const url = `http://localhost:8000/students/api/${id}/`
+      const url = `students/api/${id}/`
       console.log("url"+ url)
-      const response = await axios.delete(url)
+      const response = await axiosInstance.delete(url)
       console.log("Deleted response: ",response.data)
       setstudents(prevstudent => prevstudent.filter(student => student.studentId !== id))
       alert("Student Deleted Successfully")
@@ -52,9 +53,9 @@ export default function ManageStudents() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://127.0.0.1:8000/register"
+      const url = "register"
 
-      const response = await axios.post(url, formData);
+      const response = await axiosInstance.post(url, formData);
       console.log("Server Response:", response.data);
 
       // localStorage.setItem("token", response.data.token);
@@ -99,8 +100,8 @@ export default function ManageStudents() {
   const handleSubmitEdit = async (e)=>{
     e.preventDefault()
     try{
-      const url = `http://localhost:8000/students/api/${EditM.studentId}/`
-      const response = await axios.patch(url,formData)
+      const url = `students/api/${EditM.studentId}/`
+      const response = await axiosInstance.patch(url,formData)
       setEditM(null)
       
       fetchStudent()

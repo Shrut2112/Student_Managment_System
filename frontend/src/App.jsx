@@ -19,7 +19,7 @@ import ShowAttendance from './pages/ShowAttendance'
 
 function App() {
   const user = JSON.parse(localStorage.getItem("user"));
-
+  console.log("user: ",user)
   return (
     <BrowserRouter>
       <Routes>

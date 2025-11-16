@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import axiosInstance from '../utils/config';
 
 export default function ShowAttendance() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -8,12 +9,11 @@ export default function ShowAttendance() {
   const [Details, setDetails] = useState(false)
   const [SelectedCourse, setSelectedCourse] = useState(null)
   const [DateList, setDateList] = useState([])
-  axios.defaults.headers.common['Authorization'] = `Token ${localStorage.getItem('token')}`;
-
+  
   const fetchAttendance = async () => {
     try {
-      const url = `http://127.0.0.1:8000/attendance/student/${studentId}`;
-      const response = await axios.get(url);
+      const url = `attendance/student/${studentId}`;
+      const response = await axiosInstance.get(url);
       setAttendanceData(response.data.result);
       setDateList(response.data.dates);
       console.log(response.data.result);

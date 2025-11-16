@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { BookOpen, User, CalendarDays } from "lucide-react";
+import axiosInstance from "../utils/config";
 
 export default function InstructorDashboardSummary() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -13,16 +14,13 @@ export default function InstructorDashboardSummary() {
   const [AvgAttendance, setAvgAttendance] = useState([]);
   const [attendanceStatus, setAttendanceStatus] = useState({});
 
-  axios.defaults.headers.common[
-    "Authorization"
-  ] = `Token ${localStorage.getItem("token")}`;
 
   // 🔹 Fetch attendance for each course (average attendance)
   const fetchAttendance = async (courses) => {
     try {
       const attendancePromises = courses.map(async (course) => {
-        const url = `http://127.0.0.1:8000/attendance/course/${course.CourseCode}/`;
-        const res = await axios.get(url);
+        const url = `attendance/course/${course.CourseCode}/`;
+        const res = await axiosInstance.get(url);
 
         return {
           courseCode: course.CourseCode,
@@ -42,8 +40,8 @@ export default function InstructorDashboardSummary() {
   // 🔹 Fetch instructor’s courses
   const fetchCourses = async () => {
     try {
-      const url = `http://127.0.0.1:8000/teaches/instructor/${InsId}/courses`;
-      const response = await axios.get(url);
+      const url = `teaches/instructor/${InsId}/courses`;
+      const response = await axiosInstance.get(url);
       setCourses(response.data);
 
       const total = response.data.reduce(
@@ -66,7 +64,7 @@ export default function InstructorDashboardSummary() {
     const statusArr = [];
     for (let course of Courses) {
       console.log("Checking attendance for course:", course.CourseCode);
-      const res = await axios.get(`http://127.0.0.1:8000/attendance/status/${course.CourseCode}/`);
+      const res = await axiosInstance.get(`attendance/status/${course.CourseCode}/`);
       statusArr.push({
         courseCode: course.CourseCode,
         courseName: course.CourseName,

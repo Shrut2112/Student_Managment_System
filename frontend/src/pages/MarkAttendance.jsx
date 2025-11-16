@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import axiosInstance from "../utils/config";
 
 export default function MarkAttendance() {
   const [courses, setCourses] = useState([]);
@@ -13,15 +14,13 @@ export default function MarkAttendance() {
   const user = JSON.parse(localStorage.getItem("user"));
   const InsId = user?.InsId;
   const [currentdate, setcurrentdate] = useState(null);
-  axios.defaults.headers.common[
-    "Authorization"
-  ] = `Token ${localStorage.getItem("token")}`;
+ 
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const url = `http://127.0.0.1:8000/teaches/instructor/${InsId}/courses`;
-        const response = await axios.get(url);
+        const url = `teaches/instructor/${InsId}/courses`;
+        const response = await axiosInstance.get(url);
         setCourses(response.data);
         const d = new Date();
         setcurrentdate(d.toLocaleDateString());
@@ -34,8 +33,8 @@ export default function MarkAttendance() {
 
   const fetchStudent = async (CourseCode) => {
     try {
-      const url = `http://127.0.0.1:8000/attendance/stats/${CourseCode}`;
-      const response = await axios.get(url);
+      const url = `attendance/stats/${CourseCode}`;
+      const response = await axiosInstance.get(url);
       setstudents(response.data.student);
       console.log(response.data.student);
       const initialattend = [];
@@ -63,14 +62,14 @@ export default function MarkAttendance() {
 
   const handleSubmit = async () => {
     try {
-      const url = "http://localhost:8000/attendance/markAttendance/";
+      const url = "attendance/markAttendance/";
       const payload = {
         InsId: InsId,
         CourseCode: selectedCourse.CourseCode,
         attendance_data: attendance,
       };
       console.log("attendance: ", payload);
-      const response = await axios.post(url, payload);
+      const response = await axiosInstance.post(url, payload);
       alert("Attendance submitted ✅");
       setIsOpen(false);
       payload;
@@ -81,8 +80,8 @@ export default function MarkAttendance() {
 
   const openShowAttendance = async (course) => {
     try {
-      const url = `http://localhost:8000/attendance/course/${course.CourseCode}`;
-      const response = await axios.get(url);
+      const url = `attendance/course/${course.CourseCode}`;
+      const response = await axiosInstance.get(url);
       console.log(response.data.dates);
       setselectedCourse(course);
       setDatesList(response.data.dates);
@@ -98,8 +97,8 @@ export default function MarkAttendance() {
     const statusArr = [];
     for (let course of courses) {
       console.log("Checking attendance for course:", course.CourseCode);
-      const res = await axios.get(
-        `http://127.0.0.1:8000/attendance/status/${course.CourseCode}/`
+      const res = await axiosInstance.get(
+        `attendance/status/${course.CourseCode}/`
       );
       statusArr.push({
         courseCode: course.CourseCode,

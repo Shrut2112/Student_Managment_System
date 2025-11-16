@@ -1,7 +1,7 @@
 import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { User, Mail, Phone, IdCard, Building2,Venus,Calendar } from "lucide-react";
-
+import axiosInstance from "../utils/config";
 export default function ProfilePage() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,15 +21,15 @@ export default function ProfilePage() {
 
         if (user.role === "student") {
           if (!user.studentId) throw new Error("Student ID is missing.");
-          url = `http://127.0.0.1:8000/students/profile?studentId=${user.studentId}`;
+          url = `students/profile?studentId=${user.studentId}`;
         } else if (user.role === "instructor") {
           if (!user.InsId) throw new Error("Instructor ID is missing.");
-          url = `http://127.0.0.1:8000/instructor/profile?InsId=${user.InsId}`;
+          url = `instructor/profile?InsId=${user.InsId}`;
         } else {
           throw new Error("Unknown user role.");
         }
 
-        const response = await axios.get(url);
+        const response = await axiosInstance.get(url);
         setData(response.data);
         
       } catch (error) {

@@ -9,7 +9,7 @@ from Instructor.models import Instructor
 from rest_framework.authtoken.models import Token
 from .models import Users
 from user.serializer import StudentRegistrationSerializer,InstructorRegSerializer,RegisterAdminSerializer
-import re
+from rest_framework_simplejwt.tokens import RefreshToken
 
 # Create your views here.
 class RegisterUser(APIView):
@@ -50,14 +50,17 @@ class LoginUser(APIView):
         user = authenticate(username=username,password=password)
 
         if user is not None:
-            toekn,_= Token.objects.get_or_create(user=user)
+            #toekn,_= Token.objects.get_or_create(user=user)
 
+            refresh =  RefreshToken.for_user(user)
+            
             response_data = {
-                'token': toekn.key,
+                'access': str(refresh.access_token),
                 'user_id': user.id,
                 'username': user.username,
                 'role': user.role,
             }
+            
 
             # --- This is the new logic ---
             # Check the user's role and find the corresponding profile ID
@@ -76,10 +79,35 @@ class LoginUser(APIView):
                 # profile hasn't been created yet.
                 pass 
             # --- End of new logic ---
-
-            return Response(response_data, status=status.HTTP_200_OK)
+            response = Response(response_data, status=status.HTTP_200_OK)
+            response.set_cookie(
+                key="refresh_token",
+                value=str(refresh),
+                httponly=True,
+                secure=False,
+                samesite='Lax',
+                max_age=60*60*24
+            )
+            return response
         else:
             return Response(
                 {"error": "Invalid credentials"},
                 status=status.HTTP_401_UNAUTHORIZED
             )
+from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
+
+class CookieTokenRefreshView(TokenRefreshView):
+    def post(self, request, *args, **kwargs):
+        refresh_token = request.COOKIES.get("refresh_token")
+        
+        if refresh_token is None:
+            return Response({"detail": "Refresh token not found"}, status=401)
+
+        try:
+            refresh = RefreshToken(refresh_token)
+            data = {"access": str(refresh.access_token)}
+            return Response(data)
+        except Exception as e:
+            return Response({"detail": "Invalid or expired refresh token"}, status=401)

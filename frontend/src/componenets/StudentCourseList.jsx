@@ -1,13 +1,14 @@
 import {React,useState,useEffect} from 'react'
 import axios from 'axios';
+import axiosInstance from '../utils/config';
 export default function StudentCourseList({course,onClose}) {
   const [students, setstudents] = useState([])
   const [selectCourse, setselectCourse] = useState(null)
   useEffect(() => {
     const fetchStudent = async ()=>{
       try{
-        const url = `http://127.0.0.1:8000/enrollment/course/${course.CourseCode}`
-        const response = await axios.get(url)
+        const url = `enrollment/course/${course.CourseCode}`
+        const response = await axiosInstance.get(url)
         setstudents(response.data)
         // console.log(response.data)
       }catch (err){

@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Attendance
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from backend.permission import IsInstructor,IsInstOrAdmin
 from Instructor.models import Instructor
 from courses.models import Course
@@ -15,7 +15,7 @@ from students.serilizer import StudentSerializer
 from logs.models import LogDetails
 # Create your views here.
 class MarkAttendance(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsInstructor]
 
     def post(self,request):
@@ -65,7 +65,7 @@ class MarkAttendance(APIView):
         return Response({"message":"Attendance updated"})
 
 class CourseAttendance(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,IsInstOrAdmin]
 
     def get(self,request,CourseCode):
@@ -105,7 +105,7 @@ class CourseAttendance(APIView):
         return Response({"student_data":result,"dates":dates,"average_attendance":round(avg_attendance,2)})
 
 class StudentAttendance(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self,request,studentId):
@@ -147,7 +147,7 @@ class StudentAttendance(APIView):
         return Response({"result":result,"dates":dates,"average_attendance":round(avg_attendance,2)})
 
 class CourseAttendanceStats(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self,request,CourseCode):
@@ -174,7 +174,7 @@ class CourseAttendanceStats(APIView):
 from datetime import date
 
 class AttendanceStats(APIView):
-    authentication_classes = [TokenAuthentication]
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsInstOrAdmin]
 
     def get(self, request, CourseCode):

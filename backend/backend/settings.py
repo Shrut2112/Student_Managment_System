@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ALLOW_ALL_ORIGINS = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'rest_framework_simplejwt',
 ]
 AUTH_USER_MODEL = "user.Users"
 
@@ -62,8 +65,18 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React dev server
+    "https://student-managment-system-beta.vercel.app/"
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://student-managment-system-beta.vercel.app/"
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
 ]
 ROOT_URLCONF = "backend.urls"
 
@@ -82,6 +95,13 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+
 WSGI_APPLICATION = "backend.wsgi.application"
 
 
@@ -89,10 +109,18 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_amx_age = 600
+    )
+    # {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "SMS_DB",
+    #     "USER": "postgres",
+    #     "PASSWORD": "Codeis@04",
+    #     "HOST": "localhost",
+    #     "PORT": 5432,
+    # }
 }
 
 

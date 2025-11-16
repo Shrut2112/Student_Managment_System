@@ -19,9 +19,11 @@ export default function LoginPage() {
       const response = await axios.post('http://localhost:8000/login', formData);
       console.log("Server Response:", response.data);
 
-      localStorage.setItem('token',response.data.token);
+      localStorage.setItem('access_token',response.data.access);
+      localStorage.setItem('refresh_token',response.data.refresh);
       localStorage.setItem('role',response.data.role)
       localStorage.setItem('user',JSON.stringify(response.data));
+      console.log("LOgin DOne")
       navigate('/dashboard')
 
     }
