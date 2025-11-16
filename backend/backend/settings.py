@@ -29,7 +29,10 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'student-managment-system-j3al.onrender.com',
+    "student-managment-system-beta.vercel.app/"
+]
 
 
 # Application definition
